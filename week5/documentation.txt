@@ -1,0 +1,29 @@
+Creating a Dockerfile
+A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image. 
+Docker can build images automatically by reading the instructions from a Dockerfile.
+
+We created a Dockerfile by creating a empty text file and renaming it to Dockerfile and then entering the following code in it.
+
+# Use the official Node.js image as the base image
+FROM node:16
+
+# Set the working directory inside the container
+WORKDIR /usr/src/app
+
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application code to the working directory
+COPY . .
+
+# Expose the port the app runs on
+EXPOSE 3040
+
+# Command to run the application
+CMD ["node", "server.js"]
+
+We then built a docker image by using the command "$ docker build -t yourusername/example-node-app."
+
