@@ -27,3 +27,12 @@ CMD ["node", "server.js"]
 
 We then built a docker image by using the command "$ docker build -t yourusername/example-node-app."
 
+we created a compose docker file
+Docker Compose is a tool that helps you define and share multi-container applications. 
+With Compose, we can create a YAML file to define the services and with a single command, 
+you can spin everything up or tear it all down
+
+we push the socker image to registry for safekeeping, ready for deployment
+
+We made multiple networks in docker compose because it teaches us how to isolate services running in different containers. 
+By organising containers into networks we can reduce the complexity of network configurations and better performance, reducing the network congestion.
