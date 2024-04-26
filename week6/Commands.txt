@@ -1,0 +1,43 @@
+Look at Week-6 of my repository
+Enable Kubernetes as mentioned in slides
+
+kubectl cluster-info
+kubectl get nodes
+
+Deploy dashboard:
+ kubectl apply -f .\create-dashboard-ui.yaml
+ kubectl apply -f .\dashboard-adminuser.yaml
+ Get Token using following command
+ kubectl -n kubernetes-dashboard create token admin-user
+ Issue Command:
+ kubectl proxy
+ Access on browser:
+ http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+ Sign In WIth Token above
+
+ Create pods using:
+ kubectl apply -f .\createPods.yaml
+ kubectl get pods
+
+ Create Replica Set using
+ kubectl apply -f .\createReplicaSet.yaml
+ Check creation of 3 pods instead of 4 from previous
+ Delete 1 and check if 3 are still there
+ kubectl delete pod mypod
+
+ Create a Deployment using
+kubectl apply -f .\createDeployment.yaml
+kubectl get pods
+
+Create Service using
+kubectl apply -f .\createService.yaml
+
+check the url using port 8037 on localhost
+
+ 
+
+
+
+
+
+
